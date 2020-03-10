@@ -110,6 +110,11 @@ def roundRobinPartition(ratingstablename, numberofpartitions, openconnection):
 def roundrobininsert(ratingstablename, userid, itemid, rating, openconnection):
     prefix = "rrobin_part"
     with openconnection.cursor() as cur:
+        insert_into = """INSERT INTO {0} VALUES(
+                                {1},{2},{3}
+                                )
+                            """.format(ratingstablename,userid,itemid,rating)
+        cur.execute(insert_into)
         get_tables = """SELECT 
                             table_name
                         FROM 
@@ -153,6 +158,11 @@ def roundrobininsert(ratingstablename, userid, itemid, rating, openconnection):
 def rangeinsert(ratingstablename, userid, itemid, rating, openconnection):
     prefix = "range_part"
     with openconnection.cursor() as cur:
+        insert_into = """INSERT INTO {0} VALUES(
+                                {1},{2},{3}
+                                )
+                            """.format(ratingstablename,userid,itemid,rating)
+        cur.execute(insert_into)
         get_tables = """SELECT 
                             table_name
                         FROM 

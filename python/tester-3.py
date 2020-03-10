@@ -12,7 +12,7 @@ USER_ID_COLNAME = 'userid'
 MOVIE_ID_COLNAME = 'movieid'
 RATING_COLNAME = 'rating'
 INPUT_FILE_PATH = 'D:/GitHub/datafragmentation/python/text_data.txt'
-ACTUAL_ROWS_IN_INPUT_FILE = 20  # Number of lines in the input file
+ACTUAL_ROWS_IN_INPUT_FILE = 80  # Number of lines in the input file
 
 import psycopg2
 import traceback
@@ -52,6 +52,13 @@ if __name__ == '__main__':
             [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 1, 3, conn, '0')
             [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 1, 3, conn, '1')
             [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 1, 3, conn, '2')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 1, 3, conn, '3')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 1, 3, conn, '4')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 200, 1, 3, conn, '0')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 2, 3, conn, '1')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 3, 3, conn, '2')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 4, 3, conn, '3')
+            [result, e] = testHelper.testroundrobininsert(MyAssignment, RATINGS_TABLE, 100, 5, 3, conn, '4')
             if result :
                 print "roundrobininsert function pass!"
 
